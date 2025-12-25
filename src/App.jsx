@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Header from './components/Header'
+import Home from './components/Home'
 import Sidebar from './components/Sidebar'
 import MapContainer from './components/MapContainer'
 import Dashboard from './components/Dashboard'
@@ -8,11 +9,13 @@ import TrainingManagement from './components/TrainingManagement'
 import './App.css'
 
 function App() {
-  const [activeView, setActiveView] = useState('map')
-  const [sidebarOpen, setSidebarOpen] = useState(true)
+  const [activeView, setActiveView] = useState('home')
+  const [sidebarOpen, setSidebarOpen] = useState(false)
 
   const renderActiveView = () => {
     switch (activeView) {
+      case 'home':
+        return <Home setActiveView={setActiveView} />
       case 'map':
         return <MapContainer />
       case 'dashboard':
@@ -22,24 +25,29 @@ function App() {
       case 'training':
         return <TrainingManagement />
       default:
-        return <MapContainer />
+        return <Home setActiveView={setActiveView} />
     }
   }
 
+  const isHomePage = activeView === 'home'
+
   return (
     <div className="flex h-screen bg-gray-100">
-      <Sidebar 
-        isOpen={sidebarOpen} 
-        activeView={activeView} 
-        setActiveView={setActiveView}
-      />
+      {!isHomePage && (
+        <Sidebar 
+          isOpen={sidebarOpen} 
+          activeView={activeView} 
+          setActiveView={setActiveView}
+        />
+      )}
       
       <div className="flex-1 flex flex-col overflow-hidden">
         <Header 
           toggleSidebar={() => setSidebarOpen(!sidebarOpen)}
+          setActiveView={setActiveView}
         />
         
-        <main className="flex-1 overflow-hidden">
+        <main className={`flex-1 ${isHomePage ? 'overflow-auto' : 'overflow-hidden'}`}>
           {renderActiveView()}
         </main>
       </div>

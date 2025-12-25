@@ -3,13 +3,19 @@ import {
   BarChart3, 
   Users, 
   MapPin,
-  BookOpen
+  BookOpen,
+  Activity,
+  Download,
+  Search
 } from 'lucide-react'
 
 const Sidebar = ({ isOpen, activeView, setActiveView }) => {
   const menuItems = [
     { id: 'map', label: 'Interactive Map', icon: Map },
     { id: 'dashboard', label: 'Dashboard', icon: BarChart3 },
+    { id: 'analysis', label: 'Spatial Analysis', icon: Activity },
+    { id: 'export', label: 'Data Export', icon: Download },
+    { id: 'research', label: 'Research Support', icon: Search },
     { id: 'users', label: 'User Management', icon: Users },
     { id: 'training', label: 'Training Programs', icon: BookOpen },
   ]
