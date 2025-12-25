@@ -29,11 +29,23 @@ const UserManagement = () => {
     },
     {
       id: 2,
+      name: 'Shahidul Islam',
+      email: 'shahidul.islam@ictd.gov.bd',
+      phone: '+880-1712-234567',
+      role: 'GIS Analyst',
+      department: 'Spatial Analysis',
+      location: 'Dhaka',
+      joinDate: '2023-02-28',
+      status: 'Active',
+      avatar: 'https://ui-avatars.com/api/?name=Shahidul+Islam&background=6366F1&color=fff'
+    },
+    {
+      id: 3,
       name: 'Fatima Khatun',
       email: 'fatima.khatun@ictd.gov.bd',
-      phone: '+880-1712-234567',
+      phone: '+880-1713-345678',
       role: 'Remote Sensing Specialist',
-      department: 'Spatial Analysis',
+      department: 'Remote Sensing',
       location: 'Chittagong',
       joinDate: '2023-03-20',
       status: 'Active',
@@ -84,6 +96,7 @@ const UserManagement = () => {
   const roles = [
     'All',
     'GIS Project Manager',
+    'GIS Analyst',
     'Remote Sensing Specialist', 
     'Web GIS Developer',
     'Spatial Database Administrator',
@@ -94,6 +107,10 @@ const UserManagement = () => {
     'GIS Project Manager': {
       color: 'bg-blue-100 text-blue-800',
       permissions: ['Full Access', 'Project Management', 'Team Oversight', 'Budget Control']
+    },
+    'GIS Analyst': {
+      color: 'bg-indigo-100 text-indigo-800',
+      permissions: ['Spatial Analysis', 'Data Interpretation', 'Report Generation', 'Research Support']
     },
     'Remote Sensing Specialist': {
       color: 'bg-green-100 text-green-800',

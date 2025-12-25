@@ -13,7 +13,22 @@ const ROLE_PERMISSIONS = {
     canEditReports: true,
     canManageSettings: true,
     canViewAnalysis: true,
-    canEditAnalysis: true
+    canEditAnalysis: true,
+    canViewResearch: true
+  },
+  'GIS Analyst': {
+    canViewMap: true,
+    canEditMap: true,
+    canViewDashboard: true,
+    canManageUsers: false,
+    canManageTraining: false,
+    canExportData: true,
+    canViewReports: true,
+    canEditReports: true,
+    canManageSettings: false,
+    canViewAnalysis: true,
+    canEditAnalysis: true,
+    canViewResearch: true
   },
   'Remote Sensing Specialist': {
     canViewMap: true,
@@ -26,7 +41,8 @@ const ROLE_PERMISSIONS = {
     canEditReports: true,
     canManageSettings: false,
     canViewAnalysis: true,
-    canEditAnalysis: true
+    canEditAnalysis: true,
+    canViewResearch: true
   },
   'Web GIS Developer': {
     canViewMap: true,
@@ -39,7 +55,8 @@ const ROLE_PERMISSIONS = {
     canEditReports: false,
     canManageSettings: true,
     canViewAnalysis: true,
-    canEditAnalysis: false
+    canEditAnalysis: false,
+    canViewResearch: false
   },
   'Spatial Database Administrator': {
     canViewMap: true,
@@ -52,7 +69,8 @@ const ROLE_PERMISSIONS = {
     canEditReports: false,
     canManageSettings: true,
     canViewAnalysis: true,
-    canEditAnalysis: false
+    canEditAnalysis: false,
+    canViewResearch: false
   },
   'ICT / GIS Trainer': {
     canViewMap: true,
@@ -65,7 +83,8 @@ const ROLE_PERMISSIONS = {
     canEditReports: false,
     canManageSettings: false,
     canViewAnalysis: true,
-    canEditAnalysis: false
+    canEditAnalysis: false,
+    canViewResearch: false
   }
 }
 
@@ -168,6 +187,7 @@ export const UserRoleIndicator = () => {
   const getRoleColor = (role) => {
     switch (role) {
       case 'GIS Project Manager': return 'bg-blue-100 text-blue-800'
+      case 'GIS Analyst': return 'bg-indigo-100 text-indigo-800'
       case 'Remote Sensing Specialist': return 'bg-green-100 text-green-800'
       case 'Web GIS Developer': return 'bg-purple-100 text-purple-800'
       case 'Spatial Database Administrator': return 'bg-yellow-100 text-yellow-800'
